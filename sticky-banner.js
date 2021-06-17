@@ -137,8 +137,3 @@ function decrement() {
         blockerCounter = blockerCounter - 1;
     }
 }
-
-// let x = new StickyBanner('sdsfd')
-// console.log(x)
-// x.destroy()
-// console.log(StickyBanner)
