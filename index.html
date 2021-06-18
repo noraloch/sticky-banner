@@ -87,20 +87,25 @@
         hideEnabled: true
     });
 
+
     // 3. Create a StickyBanner at the bottom of the viewport
     var bottomBanner = new StickyBanner('<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfs5BVyXJ06KkAZ4icfmqPgI_z_Ca_Q_y3g&usqp=CAU" />', {
         position: 'bottom',
         hideEnabled: false
     });
 
+
     // 2. Destroy the StickyBanner
     topBanner.destroy()
 
+
+    // 6. StickyBanner set to hideEnabled = true, should hide whenever a blocker element (classname of 'blocker' is visible)
     // 4. Create another StickyBanner at the bottom of the viewport, should destroy the first bottomBanner
-    var bottomBanner1 = new StickyBanner("<img src='https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80'/>", {
-        position: 'top',
-        hideEnabled: false
+    var bottomBanner2 = new StickyBanner("<img src='https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80'/>", {
+        position: 'bottom',
+        hideEnabled: true
     });
+
 
     // 5. Create a StickyBanner using default settings, should be {position: top, hideEnabled: false}
     var topBanner2 = new StickyBanner('<img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80" />', {});
