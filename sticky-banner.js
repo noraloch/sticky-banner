@@ -22,7 +22,7 @@ const bottomBannerExists = () => {
     return false
 }
 
-/////////////////// Class //////////////////
+/////////////////// class //////////////////
 class StickyBanner {
     constructor(html, { position = 'top', hideEnabled = false }) {
         this.html = html;
@@ -44,9 +44,9 @@ class StickyBanner {
         return this.config.position === 'top';
     }
 
-    /* removed the element from the DOM. The instance object itself will be deleted
-     automatically by the Garbage Collector once not used anymore */
 
+    /* Removed the element from the DOM. The class instance object itself will be deleted
+     automatically by the Garbage Collector once not used anymore */
     destroy() {
         this.bannerHtmlElm.remove();
     }
@@ -103,21 +103,21 @@ class StickyBanner {
         document.body.appendChild(bannerElement);
     }
 
-    // hide banner when block appears; 
-    // css display property removes the whole element. Unlike visibility that keeps the space of the element on the document.
-
     // change display of banner
     showBanner(display) {
         this.bannerHtmlElm.style.display = display;
+        /* notes: CSS display property removes the whole element.Unlike visibility 
+        which keeps the space of the element on the document.*/
     }
 }
 //////////////////// end of class //////////////////////       
 
-/* blocker visibility check helper: Using the Intersection Obeserver API. Browsers came out with it not a long time ago 
-to solve the performance issues that a traditional scroll event listener has */
+/* blocker visibility check: Using the Intersection Obeserver API helps solve
+the performance issues that a traditional scroll event listener has */
 
-// Normally, Check for exsistence of IntersectionObserver (and other APIs) before we try and use them. 
-// Task said to assume we are using a modern browser.
+/* Normally, Check for exsistence of IntersectionObserver (and other APIs) before we try 
+and use them. It was mentioned in the instructions to assume we are using a modern browser. */
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const outOfViewEvent = new Event(customBlockIsNotVisibleEvent);
     const inViewEvent = new Event(customBlockIsVisibleEvent);
